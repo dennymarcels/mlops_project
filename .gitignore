@@ -14,4 +14,6 @@ models/*.keras
 # Metrics
 metrics/*.json
 
+# MLflow
+mlruns
 
