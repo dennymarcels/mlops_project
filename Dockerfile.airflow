@@ -4,6 +4,11 @@ USER root
 
 RUN groupadd airflow && usermod -aG airflow airflow
 
+USER airflow
+COPY pyproject.toml /home/airflow/
+RUN pip install /home/airflow/
+USER root
+
 COPY . /home/airflow/mlops_project
 RUN chown -R airflow:airflow /home/airflow/mlops_project
 
